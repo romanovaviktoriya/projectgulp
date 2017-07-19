@@ -1,0 +1,28 @@
+{
+  "name": "start",
+  "version": "1.0.0",
+  "description": "Start pack for Front-end develop",
+  "author": "Viktoriya Romanova",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "latest",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "gulp.spritesmith": "latest",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "latest",
+    "rimraf": "latest"
+  }
+}
