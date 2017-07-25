@@ -6,7 +6,10 @@
     <file url="file://$PROJECT_DIR$/app/include/footer.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/include/header.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/less/style.less" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/less/style1.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/libs/jquery/jquery-3.2.1.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dist/css/style.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dist/style.min.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gulpfile.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/readme.txt" charset="UTF-8" />
