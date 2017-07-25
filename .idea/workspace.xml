@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3127f9b1-a9b8-42d0-9bae-8077c4ee6da4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/.bowerrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/app/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/css/libs.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/img/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/img/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/img/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/js/common.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/dist/js/libs.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/gulpfile1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/gulpfile11.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/main/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/css/less/style.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/css/partial/mixins.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/css/partial/styles.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/css/styles.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/js/libs/jquery-3.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/template/include/footer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/template/include/header.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src/template/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src1652626/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src1652626/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src1652626/template/include/footer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src1652626/template/include/header.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Новая папка/src1652626/template/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
     </list>
@@ -49,21 +16,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="62" column="33" lean-forward="true" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -126,13 +93,13 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/libs/jquery/jquery-3.2.1.min.js" />
         <option value="$PROJECT_DIR$/app/less/style.less" />
         <option value="$PROJECT_DIR$/app/include/header.html" />
         <option value="$PROJECT_DIR$/app/include/footer.html" />
         <option value="$PROJECT_DIR$/app/css/style.css" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -331,17 +298,18 @@
       <updated>1500379388013</updated>
       <workItem from="1500379389293" duration="30732000" />
       <workItem from="1500902221718" duration="549000" />
-      <workItem from="1500903880357" duration="3188000" />
+      <workItem from="1500903880357" duration="3807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34469000" />
+    <option name="totallyTimeSpent" value="35088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="0" width="1934" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25026068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -517,14 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -585,8 +545,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="62" column="33" lean-forward="true" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        <state relative-caret-position="204">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>

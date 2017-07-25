@@ -10,7 +10,7 @@ var gulp       = require('gulp'), // Подключаем Gulp
     pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
     autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов           npm install gulp-uglifyjs --save-dev
-    csso = require('gulp-csso'),
+    csso = require('gulp-csso'), //
     rigger = require('gulp-rigger');    //плагин позволяет хранить статичные части сайта, такие как header, footer, aside
                                         // и т.д., в отдельных файлах и подключать их в любой части другого файла
 
