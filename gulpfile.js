@@ -1,25 +1,25 @@
-var gulp       = require('gulp'), // Подключаем Gulp
-    less         = require('gulp-less'), //Подключаем less пакет,
-    browserSync  = require('browser-sync'), // Подключаем Browser Sync
-    concat       = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    uglify       = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
-    cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
-    rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
-    del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
-    imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
-    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
-    cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
-    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов           npm install gulp-uglifyjs --save-dev
+var gulp       = require('gulp'), // РџРѕРґРєР»СЋС‡Р°РµРј Gulp
+    less         = require('gulp-less'), //РџРѕРґРєР»СЋС‡Р°РµРј less РїР°РєРµС‚,
+    browserSync  = require('browser-sync'), // РџРѕРґРєР»СЋС‡Р°РµРј Browser Sync
+    concat       = require('gulp-concat'), // РџРѕРґРєР»СЋС‡Р°РµРј gulp-concat (РґР»СЏ РєРѕРЅРєР°С‚РµРЅР°С†РёРё С„Р°Р№Р»РѕРІ)
+    uglify       = require('gulp-uglifyjs'), // РџРѕРґРєР»СЋС‡Р°РµРј gulp-uglifyjs (РґР»СЏ СЃР¶Р°С‚РёСЏ JS)
+    cssnano      = require('gulp-cssnano'), // РџРѕРґРєР»СЋС‡Р°РµРј РїР°РєРµС‚ РґР»СЏ РјРёРЅРёС„РёРєР°С†РёРё CSS
+    rename       = require('gulp-rename'), // РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РґР»СЏ РїРµСЂРµРёРјРµРЅРѕРІР°РЅРёСЏ С„Р°Р№Р»РѕРІ
+    del          = require('del'), // РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ С„Р°Р№Р»РѕРІ Рё РїР°РїРѕРє
+    imagemin     = require('gulp-imagemin'), // РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РёР·РѕР±СЂР°Р¶РµРЅРёСЏРјРё
+    pngquant     = require('imagemin-pngquant'), // РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ png
+    cache        = require('gulp-cache'), // РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РєРµС€РёСЂРѕРІР°РЅРёСЏ
+    autoprefixer = require('gulp-autoprefixer'),// РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РґР»СЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РґРѕР±Р°РІР»РµРЅРёСЏ РїСЂРµС„РёРєСЃРѕРІ           npm install gulp-uglifyjs --save-dev
     csso = require('gulp-csso'),
-    rigger = require('gulp-rigger');    //плагин позволяет хранить статичные части сайта, такие как header, footer, aside
-                                        // и т.д., в отдельных файлах и подключать их в любой части другого файла
+    rigger = require('gulp-rigger');    //РїР»Р°РіРёРЅ РїРѕР·РІРѕР»СЏРµС‚ С…СЂР°РЅРёС‚СЊ СЃС‚Р°С‚РёС‡РЅС‹Рµ С‡Р°СЃС‚Рё СЃР°Р№С‚Р°, С‚Р°РєРёРµ РєР°Рє header, footer, aside
+                                        // Рё С‚.Рґ., РІ РѕС‚РґРµР»СЊРЅС‹С… С„Р°Р№Р»Р°С… Рё РїРѕРґРєР»СЋС‡Р°С‚СЊ РёС… РІ Р»СЋР±РѕР№ С‡Р°СЃС‚Рё РґСЂСѓРіРѕРіРѕ С„Р°Р№Р»Р°
 
-gulp.task('less', function(){ // Создаем таск Less
-    return gulp.src('app/less/**/*.less') // Берем источник
-        .pipe(less()) // Преобразуем Less в CSS посредством gulp-less
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true })) // Создаем префиксы
-        .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+gulp.task('less', function(){ // РЎРѕР·РґР°РµРј С‚Р°СЃРє Less
+    return gulp.src('app/less/**/*.less') // Р‘РµСЂРµРј РёСЃС‚РѕС‡РЅРёРє
+        .pipe(less()) // РџСЂРµРѕР±СЂР°Р·СѓРµРј Less РІ CSS РїРѕСЃСЂРµРґСЃС‚РІРѕРј gulp-less
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true })) // РЎРѕР·РґР°РµРј РїСЂРµС„РёРєСЃС‹
+        .pipe(gulp.dest('app/css')) // Р’С‹РіСЂСѓР¶Р°РµРј СЂРµР·СѓР»СЊС‚Р°С‚Р° РІ РїР°РїРєСѓ app/css
+        .pipe(browserSync.reload({stream: true})) // РћР±РЅРѕРІР»СЏРµРј CSS РЅР° СЃС‚СЂР°РЅРёС†Рµ РїСЂРё РёР·РјРµРЅРµРЅРёРё
 });
 
 gulp.task('html', function(){
@@ -28,68 +28,68 @@ gulp.task('html', function(){
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
-    browserSync({ // Выполняем browserSync
-        server: { // Определяем параметры сервера
-            baseDir: 'app' // Директория для сервера - app
+gulp.task('browser-sync', function() { // РЎРѕР·РґР°РµРј С‚Р°СЃРє browser-sync
+    browserSync({ // Р’С‹РїРѕР»РЅСЏРµРј browserSync
+        server: { // РћРїСЂРµРґРµР»СЏРµРј РїР°СЂР°РјРµС‚СЂС‹ СЃРµСЂРІРµСЂР°
+            baseDir: 'app' // Р”РёСЂРµРєС‚РѕСЂРёСЏ РґР»СЏ СЃРµСЂРІРµСЂР° - app
         },
-        notify: false // Отключаем уведомления
+        notify: false // РћС‚РєР»СЋС‡Р°РµРј СѓРІРµРґРѕРјР»РµРЅРёСЏ
     });
 });
 
 gulp.task('scripts', function() {
-    return gulp.src([ // Берем все необходимые библиотеки
-        'app/libs/jquery/jquery-3.2.1.min.js'//, // Берем jQuery
-       // 'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
+    return gulp.src([ // Р‘РµСЂРµРј РІСЃРµ РЅРµРѕР±С…РѕРґРёРјС‹Рµ Р±РёР±Р»РёРѕС‚РµРєРё
+        'app/libs/jquery/jquery-3.2.1.min.js'//, // Р‘РµСЂРµРј jQuery
+       // 'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Р‘РµСЂРµРј Magnific Popup
     ])
-        .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
-        .pipe(uglify()) // Сжимаем JS файл
-        .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
+        .pipe(concat('libs.min.js')) // РЎРѕР±РёСЂР°РµРј РёС… РІ РєСѓС‡Сѓ РІ РЅРѕРІРѕРј С„Р°Р№Р»Рµ libs.min.js
+        .pipe(uglify()) // РЎР¶РёРјР°РµРј JS С„Р°Р№Р»
+        .pipe(gulp.dest('app/js')); // Р’С‹РіСЂСѓР¶Р°РµРј РІ РїР°РїРєСѓ app/js
 });
 
 gulp.task('css-libs', ['less'], function() {
-    return gulp.src('app/css/libs.css') // Выбираем файл для минификации
-        .pipe(cssnano()) // Сжимаем
-        .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-        .pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
+    return gulp.src('app/css/libs.css') // Р’С‹Р±РёСЂР°РµРј С„Р°Р№Р» РґР»СЏ РјРёРЅРёС„РёРєР°С†РёРё
+        .pipe(cssnano()) // РЎР¶РёРјР°РµРј
+        .pipe(rename({suffix: '.min'})) // Р”РѕР±Р°РІР»СЏРµРј СЃСѓС„С„РёРєСЃ .min
+        .pipe(gulp.dest('app/css')); // Р’С‹РіСЂСѓР¶Р°РµРј РІ РїР°РїРєСѓ app/css
 });
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
-    gulp.watch('app/less/**/*.less', ['less']); // Наблюдение за less файлами в папке less
-    gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('app/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
+    gulp.watch('app/less/**/*.less', ['less']); // РќР°Р±Р»СЋРґРµРЅРёРµ Р·Р° less С„Р°Р№Р»Р°РјРё РІ РїР°РїРєРµ less
+    gulp.watch('app/*.html', browserSync.reload); // РќР°Р±Р»СЋРґРµРЅРёРµ Р·Р° HTML С„Р°Р№Р»Р°РјРё РІ РєРѕСЂРЅРµ РїСЂРѕРµРєС‚Р°
+    gulp.watch('app/js/**/*.js', browserSync.reload);   // РќР°Р±Р»СЋРґРµРЅРёРµ Р·Р° JS С„Р°Р№Р»Р°РјРё РІ РїР°РїРєРµ js
 });
 
 /*gulp.task('clean', function() {
-    return del.sync('dist'); // Удаляем папку dist перед сборкой
+    return del.sync('dist'); // РЈРґР°Р»СЏРµРј РїР°РїРєСѓ dist РїРµСЂРµРґ СЃР±РѕСЂРєРѕР№
 });*/
 
 gulp.task('img', function() {
-    return gulp.src('app/img/**/*') // Берем все изображения из app
-        /*.pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+    return gulp.src('app/img/**/*') // Р‘РµСЂРµРј РІСЃРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РёР· app
+        /*.pipe(cache(imagemin({  // РЎР¶РёРјР°РµРј РёС… СЃ РЅР°РёР»СѓС‡С€РёРјРё РЅР°СЃС‚СЂРѕР№РєР°РјРё СЃ СѓС‡РµС‚РѕРј РєРµС€РёСЂРѕРІР°РЅРёСЏ
             interlaced: true,
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         })))*/
-        .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
+        .pipe(gulp.dest('dist/img')); // Р’С‹РіСЂСѓР¶Р°РµРј РЅР° РїСЂРѕРґР°РєС€РµРЅ
 });
 
 gulp.task('build', [/*'clean',*/ 'img', 'less', 'scripts'], function() {
 
-    var buildCss = gulp.src([ // Переносим библиотеки в продакшен
+    var buildCss = gulp.src([ // РџРµСЂРµРЅРѕСЃРёРј Р±РёР±Р»РёРѕС‚РµРєРё РІ РїСЂРѕРґР°РєС€РµРЅ
         'app/css/main.css',
         'app/css/libs.min.css'
     ])
         .pipe(gulp.dest('dist/css'))
 
-    var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+    var buildFonts = gulp.src('app/fonts/**/*') // РџРµСЂРµРЅРѕСЃРёРј С€СЂРёС„С‚С‹ РІ РїСЂРѕРґР°РєС€РµРЅ
         .pipe(gulp.dest('dist/fonts'))
 
-    var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+    var buildJs = gulp.src('app/js/**/*') // РџРµСЂРµРЅРѕСЃРёРј СЃРєСЂРёРїС‚С‹ РІ РїСЂРѕРґР°РєС€РµРЅ
         .pipe(gulp.dest('dist/js'))
 
-    var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+    var buildHtml = gulp.src('app/*.html') // РџРµСЂРµРЅРѕСЃРёРј HTML РІ РїСЂРѕРґР°РєС€РµРЅ
         .pipe(gulp.dest('dist'));
 
 });
