@@ -1,0 +1,45 @@
+{
+  "name": "projectgulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romanovaviktoriya/projectgulp.git"
+  },
+  "author": "Romanova Viktoriya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romanovaviktoriya/projectgulp/issues"
+  },
+  "homepage": "https://github.com/romanovaviktoriya/projectgulp#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-ccr-parallel": "^0.1.0",
+    "gulp-changed": "^3.1.0",
+    "gulp-chef": "^0.1.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-exit": "0.0.2",
+    "gulp-grep": "^0.2.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jsonminify": "^1.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-order": "^1.1.1",
+    "gulp-protractor": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-using": "^0.1.1",
+    "karma": "^1.7.0",
+    "merge-stream": "^1.0.1"
+  }
+}

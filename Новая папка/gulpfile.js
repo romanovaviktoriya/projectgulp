@@ -7,25 +7,24 @@ var gulp       = require('gulp'), // Подключаем Gulp
     rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     del          = require('del'), // Подключаем библиотеку для удаления файлов и папок
     imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
-    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
-    cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
-    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов           npm install gulp-uglifyjs --save-dev
-    csso = require('gulp-csso'),
-    rigger = require('gulp-rigger');    //плагин позволяет хранить статичные части сайта, такие как header, footer, aside
-                                        // и т.д., в отдельных файлах и подключать их в любой части другого файла
+//  pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+// cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
+    autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов           npm install gulp-uglifyjs --save-dev
 
-gulp.task('less', function(){ // Создаем таск Less
-    return gulp.src('app/less/**/*.less') // Берем источник
-        .pipe(less()) // Преобразуем Less в CSS посредством gulp-less
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true })) // Создаем префиксы
-        .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+// таск для билдинга html
+gulp.task('html:build', function () {
+    gulp.src(path.src.html) //Выберем файлы по нужному пути
+        .pipe(rigger()) //Прогоним через rigger
+        .pipe(gulp.dest(path.build.html)) //выгрузим их в папку build
+        .pipe(connect.reload()) //И перезагрузим наш сервер для обновлений
 });
 
-gulp.task('html', function(){
-    gulp.src('app/*.html')
-        .pipe(rigger())
-        .pipe(gulp.dest('dist/'));
+gulp.task('less', function(){ // Создаем таск less
+    return gulp.src('app/less/**/*.less') // Берем источник
+        .pipe(less()) // Преобразуем less в CSS посредством gulp-less
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
+        .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
+        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
@@ -39,8 +38,8 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
-        'app/libs/jquery/jquery-3.2.1.min.js'//, // Берем jQuery
-       // 'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
+        'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
+        //'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
@@ -60,22 +59,22 @@ gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
 });
 
-/*gulp.task('clean', function() {
+gulp.task('clean', function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
-});*/
+});
 
 gulp.task('img', function() {
     return gulp.src('app/img/**/*') // Берем все изображения из app
-        /*.pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
             interlaced: true,
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
-        })))*/
+        })))
         .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
 });
 
-gulp.task('build', [/*'clean',*/ 'img', 'less', 'scripts'], function() {
+gulp.task('build', ['clean', 'img', 'less', 'scripts'], function() {
 
     var buildCss = gulp.src([ // Переносим библиотеки в продакшен
         'app/css/main.css',
@@ -94,7 +93,7 @@ gulp.task('build', [/*'clean',*/ 'img', 'less', 'scripts'], function() {
 
 });
 
-gulp.task('clear', function (callback) {
+gulp.task('clear', function () {
     return cache.clearAll();
 })
 
