@@ -13,10 +13,13 @@ var gulp       = require('gulp'), // Подключаем Gulp
     csso = require('gulp-csso'), //
     rigger = require('gulp-rigger'),    //плагин позволяет хранить статичные части сайта, такие как header, footer, aside
                                         // и т.д., в отдельных файлах и подключать их в любой части другого файла
-    sourcemaps = require('gulp-sourcemaps');    //плагин построения карты файлов стилей (какой стиль из какого файла перекачевал)
+    sourcemaps = require('gulp-sourcemaps'),    //плагин построения карты файлов стилей (какой стиль из какого файла перекачевал)
+    notify = require('gulp-notify'),    //увидеть ошибку без открытого терминала (всплывашка)
+    multipipe = require('multipipe');       //обработчик ошибок (один на все потоки)
 
 gulp.task('less', function(){ // Tаск Less
-    return gulp.src('app/less/**/*.less') // Берем исходник
+    return multipipe (
+        gulp.src('app/less/**/*.less') // Берем исходник
         .pipe(sourcemaps.init())
         .pipe(less()) // Преобразуем Less в CSS посредством gulp-less
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true })) // Создаем префиксы
@@ -26,6 +29,7 @@ gulp.task('less', function(){ // Tаск Less
         .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
+    ).on('error', notify.onError());
 });
 
 gulp.task('html', function(){       //Таск html
